@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSS Art Gallery with Live Editor</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.10/codemirror.min.css">
+</head>
+<body>
+  <div class="container">
+    <div class="gallery">
+      <h2>CSS Art Gallery</h2>
+      <button onclick="loadArt('smiley')">Load Smiley Face</button>
+      <button onclick="loadArt('flower')">Load Flower</button>
+    </div>
+
+    <div class="editor">
+      <h2>Live Editor</h2>
+      <textarea id="htmlEditor">&lt;div class='smiley'&gt;&lt;/div&gt;</textarea>
+      <textarea id="cssEditor">.smiley {
+  width: 100px;
+  height: 100px;
+  background: yellow;
+  border-radius: 50%;
+  position: relative;
+}
+.smiley::before,
+.smiley::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: black;
+  top: 25px;
+  border-radius: 50%;
+}
+.smiley::before {
+  left: 20px;
+}
+.smiley::after {
+  right: 20px;
+}
+</textarea>
+    </div>
+
+    <div class="preview">
+      <h2>Live Preview</h2>
+      <iframe id="previewFrame"></iframe>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.10/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.10/mode/css/css.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.10/mode/htmlmixed/htmlmixed.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
